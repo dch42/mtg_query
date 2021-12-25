@@ -15,6 +15,7 @@ make
 
 ## Usage
 
+Perhaps you wish to find 
 ~~~
 ./mtg_query.py -n ajanji pride -t planeswalker
 ~~~
@@ -28,6 +29,8 @@ make
     - search for term(s) in card type
 - `-c, --color [COLORS...]`
     - search for color(s) in card mana cost 
+- `-txt, --text [TERMS...]`
+    - search for term(s) in card text 
 - `-cmc`
     - search for cards with 'x' converted mana cost 
 

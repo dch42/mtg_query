@@ -2,6 +2,7 @@
 """CLI script to conditionally query Magic: The Gathering API using the Python SDK for card data."""
 import argparse
 from mtgsdk import Card
+from tqdm import tqdm
 import pyfiglet
 from rich.console import Console
 from rich.table import Table
@@ -17,23 +18,27 @@ parser.add_argument("-t", "--type", type=str, nargs='+',
                     help='search for term(s) in card type')
 parser.add_argument("-c", "--color", type=str, nargs='+',
                     help='search for color(s) in card mana')
+parser.add_argument("-txt", "--text", type=str, nargs='+',
+                    help='search for term(s) in card text')
 parser.add_argument("-cmc", type=int,
                     help='search for cards matching converted mana cost')
 args = parser.parse_args()
 
 # convert args to query-friendly format
-NAMES, COLORS, TYPES = '', '', ''
+NAMES, COLORS, TYPES, TEXT = '', '', '', ''
 if args.name:
     NAMES = (','.join(args.name))
 if args.type:
     TYPES = (','.join(args.type))
 if args.color:
     COLORS = (','.join(args.color))
+if args.text:
+    TEXT = (','.join(args.text))
 
 def print_table(cards):
     """Print a table of cards matching query"""
     table = Table(title=f"{len(cards)} matching cards found:")
-    table.add_column("Title", justify="left", style="cyan", no_wrap=True)
+    table.add_column("Card Title", justify="left", style="cyan", no_wrap=True)
     table.add_column("Set", style="magenta")
     table.add_column("CMC", justify="right", style="green")
     table.add_column("Mana Cost", justify="right", style="white")
@@ -44,7 +49,8 @@ def print_table(cards):
 
 if __name__ == '__main__':
     pyfiglet.print_figlet("MTG Query")
-    cards = Card.where(name=f'{NAMES}', type=f'{TYPES}', colors=f'{COLORS}', cmc=f'{int(args.cmc)}').all()
+    print("Searching for matching cards...\n")
+    cards = Card.where(name=f'{NAMES}', type=f'{TYPES}', colors=f'{COLORS}', cmc=f'{int(args.cmc)}', text=f'{TEXT}').all()
     if len(cards):
         print_table(cards)
     else:
