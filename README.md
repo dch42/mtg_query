@@ -1,5 +1,5 @@
 # mtg_query
-CLI script to conditionally query Magic: The Gathering API using the [Python SDK](https://github.com/MagicTheGathering/mtg-sdk-python) for card data. Useful for quick lookups/deckbuilding/etc.
+CLI script to conditionally query Magic: The Gathering API using the [Python SDK](https://github.com/MagicTheGathering/mtg-sdk-python) for card data. Useful for quick lookups/deckbuilding/etc. Tables constructed with [rich](https://github.com/willmcgugan/rich).
 
 ## Setup 🔧
 clone the repo and change to directory:
