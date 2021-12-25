@@ -62,11 +62,13 @@ def print_table(cards):
 def print_card_md(card):
     """Create and print detailed markdown for cards"""
     # eval whether to show loyalty, p/t, or none
-    loyal_power = f'Loyalty: {card.loyalty}' if 'Planeswalker' in card.type else f'Power/Toughness: {card.power}/{card.toughness}' if 'None' not in f'str({card.power})' else ''
+    loyal_power = f'Loyalty: {card.loyalty}' if 'Planeswalker' in card.type \
+        else f'Power/Toughness: {card.power}/{card.toughness}' \
+        if 'None' not in f'str({card.power})' else ''
     card_md = f"""# {card.name} {card.mana_cost}
 ### {card.type} - {card.rarity}
 Text: {card.text}\n
-Flavor: *{card.flavor}*
+Flavor Text: *{card.flavor}*\n
 {loyal_power}
 - CMC: {int(card.cmc)}
 - Colors: {card.colors}
