@@ -94,6 +94,47 @@ Press `ENTER` to return to card list, `CTRL+C` to quit
 
 To view more card data, return to the initial list by hitting 'ENTER'.
 
+Planeswalker cards will display loyalty points, creatures power/toughness:
+~~~
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                       Ajani, Strength of the Pride {2}{W}{W}                       ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+
+                       Legendary Planeswalker — Ajani - Mythic                        
+
+Text: [+1]: You gain life equal to the number of creatures you control plus the number
+of planeswalkers you control. [−2]: Create a 2/2 white Cat Soldier creature token     
+named Ajani's Pridemate with "Whenever you gain life, put a +1/+1 counter on Ajani's  
+Pridemate." [0]: If you have at least 15 life more than your starting life total,     
+exile Ajani, Strength of the Pride and each artifact and creature your opponents      
+control.                                                                              
+
+Flavor Text: None                                                                     
+
+Loyalty: 5                                                                            
+
+ • CMC: 4                                                                             
+ • Colors: ['White']                                                                  
+ • Set: Core Set 2020 Promos (PM20)  
+
+╔════════════════════════════════════════════════════════════════════════════════════╗
+║                              Ajani's Pridemate {1}{W}                              ║
+╚════════════════════════════════════════════════════════════════════════════════════╝
+
+                          Creature — Cat Soldier - Uncommon                           
+
+Text: Whenever you gain life, put a +1/+1 counter on Ajani's Pridemate.               
+
+Flavor Text: Planeswalkers conjured replicas of old allies, reminders of the          
+homeworlds that would fall next if Bolas prevailed.                                   
+
+Power/Toughness: 2/2                                                                  
+
+ • CMC: 2                                                                             
+ • Colors: ['White']                                                                  
+ • Set: War of the Spark (WAR)                                                        
+ ~~~
+
 ### Options
 - `-h, --help`
     - show this help message and exit
