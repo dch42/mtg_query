@@ -22,7 +22,12 @@ make
 ### Options
 - `-h, --help`
     - show this help message and exit
-- `-n, --name [TERMS...]`
+- `-n, --name [NAMES...]`
     - search for term(s) in card name
-- `-t, --type [TERMS...]`
-    - search for term(s) in card type 
+- `-t, --type [TYPES...]`
+    - search for term(s) in card type
+- `-c, --color [COLORS...]`
+    - search for color(s) in card mana cost 
+- `-cmc`
+    - search for cards with 'x' converted mana cost 
+
