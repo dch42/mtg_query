@@ -57,7 +57,7 @@ Hit `ENTER` when done, or `CTRL+C` to quit:
 
 To view more detailed card information, enter the 'ID' of the cards, separated by spaces.
 
-Entering `0 1` will yield:
+Entering `0 7` will yield:
 
 ~~~
 ╔════════════════════════════════════════════════════════════════════════════════════╗
@@ -75,20 +75,20 @@ Flavor Text: There's nothing quite like the feeling of paying off a large debt.
  • Colors: ['Black', 'White']                                                         
  • Set: Ravnica Allegiance (RNA)                                                      
 ╔════════════════════════════════════════════════════════════════════════════════════╗
-║                                Devour Flesh {1}{B}                                 ║
+║                              Liliana's Triumph {1}{B}                              ║
 ╚════════════════════════════════════════════════════════════════════════════════════╝
 
-                                   Instant - Common                                   
+                                  Instant - Special                                   
 
-Text: Target player sacrifices a creature, then gains life equal to that creature's   
-toughness.                                                                            
+Text: Each opponent sacrifices a creature. If you control a Liliana planeswalker, each
+opponent also discards a card.                                                        
 
-Flavor Text: His twisted mind concluded that if he was what he ate, and he wanted to  
-stay human, . . .                                                                     
+Flavor Text: Her triumph came not from escaping her death, but in claiming her        
+independence.                                                                         
 
  • CMC: 2                                                                             
  • Colors: ['Black']                                                                  
- • Set: Gatecrash (GTC)                                                               
+ • Set: Time Spiral Remastered (TSR)                                                  
 Press `ENTER` to return to card list, `CTRL+C` to quit
 ~~~
 
