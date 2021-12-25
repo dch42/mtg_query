@@ -21,6 +21,8 @@ Query parameters are passed as arguments when invoking the script.
 ### Options
 - `-h, --help`
     - show this help message and exit
+- `-cmc`
+    - search for cards with 'x' converted mana cost     
 - `-n, --name [NAMES...]`
     - search for term(s) in card name
 - `-t, --type [TYPES...]`
@@ -29,8 +31,6 @@ Query parameters are passed as arguments when invoking the script.
     - search for color(s) in card mana cost 
 - `-txt, --text [TERMS...]`
     - search for term(s) in card text 
-- `-cmc`
-    - search for cards with 'x' converted mana cost 
 
 For example, to search for all ***'black' 'instant'*** cards with a CMC of ***'2'*** which contain the text ***'sacrifice'***:
 
