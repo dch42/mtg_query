@@ -102,7 +102,8 @@ independence.
 
  • CMC: 2                                                                             
  • Colors: ['Black']                                                                  
- • Set: Time Spiral Remastered (TSR)                                                  
+ • Set: Time Spiral Remastered (TSR)
+                                                   
 Press `ENTER` to return to card list, `CTRL+C` to quit
 ~~~
 
