@@ -84,7 +84,7 @@ def print_details(detailed_cards):
     for card_id in detailed_cards:
         card = cards[int(card_id)]
         print_card_md(card)
-    input("Press `ENTER` to return to card list, `CTRL+C` to quit")
+    input("\nPress `ENTER` to return to card list, `CTRL+C` to quit")
     print_table(cards)
 
 
