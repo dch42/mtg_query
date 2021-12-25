@@ -14,14 +14,17 @@ make
 ~~~
 
 ## Usage
+Query parameters are passed as arguments when invoking the script. 
 
-To search for all *black instant* cards with a CMC of *2* which contain the text *sacrifice*:
+*Note: Parameters are evaluated cumulatively, rather than individually.*
+
+For example, to search for all ***black instant*** cards with a CMC of ***2*** which contain the text ***sacrifice***:
 
 ~~~
 ./mtg_query.py -c black -t instant -cmc 2 -txt sacrifice
 ~~~
 
-Will yield:
+Result:
 
 ~~~
 Searching for matching cards...
