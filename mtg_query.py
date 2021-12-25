@@ -17,6 +17,8 @@ parser.add_argument("-t", "--type", type=str, nargs='+',
                     help='search for term(s) in card type')
 parser.add_argument("-c", "--color", type=str, nargs='+',
                     help='search for color(s) in card mana')
+parser.add_argument("-cmc", type=int,
+                    help='search for cards matching converted mana cost')
 args = parser.parse_args()
 
 # convert args to query-friendly format
@@ -42,7 +44,7 @@ def print_table(cards):
 
 if __name__ == '__main__':
     pyfiglet.print_figlet("MTG Query")
-    cards = Card.where(name=f'{NAMES}', type=f'{TYPES}', colors=f'{COLORS}').all()
+    cards = Card.where(name=f'{NAMES}', type=f'{TYPES}', colors=f'{COLORS}', cmc=f'{int(args.cmc)}').all()
     if len(cards):
         print_table(cards)
     else:
