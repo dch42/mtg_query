@@ -38,12 +38,13 @@ if args.text:
 def print_table(cards):
     """Print a table of cards matching query"""
     table = Table(title=f"{len(cards)} matching cards found:")
+    table.add_column("ID", style="white")
     table.add_column("Card Title", justify="left", style="cyan", no_wrap=True)
     table.add_column("Set", style="magenta")
     table.add_column("CMC", justify="right", style="green")
     table.add_column("Mana Cost", justify="right", style="white")
-    for card in cards:
-        table.add_row(f"{card.name}",f"{card.set}",f"{int(card.cmc)}", f"{card.mana_cost}")
+    for idx, card in enumerate(cards):
+        table.add_row(f"{idx}", f"{card.name}",f"{card.set}",f"{int(card.cmc)}", f"{card.mana_cost}")
     console = Console()
     console.print(table)
 
