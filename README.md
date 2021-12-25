@@ -15,9 +15,27 @@ make
 
 ## Usage
 
-Perhaps you wish to find 
+To search for all *black instant* cards with a CMC of *2* which contain the text *sacrifice*:
+
 ~~~
-./mtg_query.py -n ajanji pride -t planeswalker
+./mtg_query.py -c black -t instant -cmc 2 -txt sacrifice
+~~~
+
+Will yield:
+
+~~~
+Searching for matching cards...
+
+             46 matching cards found:             
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━┳━━━━━━━━━━━┓
+┃ Card Title           ┃ Set   ┃ CMC ┃ Mana Cost ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━╇━━━━━━━━━━━┩
+│ Final Payment        │ RNA   │   2 │    {W}{B} │
+│ Devour Flesh         │ GTC   │   2 │    {1}{B} │
+│ Urborg Justice       │ WTH   │   2 │    {B}{B} │
+│ Altar's Reap         │ M14   │   2 │    {1}{B} │
+│ Altar's Reap         │ C15   │   2 │    {1}{B} │
+...
 ~~~
 
 ### Options
