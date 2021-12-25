@@ -14,9 +14,9 @@ make
 ~~~
 
 ## Usage
-Query parameters are passed as arguments when invoking the script. 
-
 *Note: Parameters are evaluated cumulatively, rather than individually.*
+
+Query parameters are passed as arguments when invoking the script. 
 
 For example, to search for all ***black instant*** cards with a CMC of ***2*** which contain the text ***sacrifice***:
 
