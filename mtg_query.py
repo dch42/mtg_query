@@ -73,10 +73,18 @@ Flavor Text: *{card.flavor}*\n
 - CMC: {int(card.cmc)}
 - Colors: {card.colors}
 - Set: {card.set_name} ({card.set})
+- Image: {card.image_url}
 """
     console = Console()
     md = Markdown(card_md)
     console.print(md)
+    print('\n\n')
+    table = Table(title=f"{card.name} Legalities")
+    table.add_column("Format", style="cyan")
+    table.add_column("Legality", style="magenta")
+    for item in card.legalities:
+        table.add_row(f"{item['format']}", f"{item['legality']}")
+    console.print(table)
 
 
 def print_details(detailed_cards):
