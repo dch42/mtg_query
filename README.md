@@ -107,6 +107,28 @@ independence.
 Press `ENTER` to return to card list, `CTRL+C` to quit
 ~~~
 
+A table of card legalities will also be rendered to the console:
+
+~~~
+   Final Payment Legalities   
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Format          ┃ Legality ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━┩
+│ Commander       │ Legal    │
+│ Duel            │ Legal    │
+│ Gladiator       │ Legal    │
+│ Historic        │ Legal    │
+│ Historicbrawl   │ Legal    │
+│ Legacy          │ Legal    │
+│ Modern          │ Legal    │
+│ Pauper          │ Legal    │
+│ Paupercommander │ Legal    │
+│ Penny           │ Legal    │
+│ Pioneer         │ Legal    │
+│ Vintage         │ Legal    │
+└─────────────────┴──────────┘
+~~~
+
 To view more card data, return to the initial list by hitting 'ENTER'.
 
 Planeswalker cards will display loyalty points, creatures power/toughness:
