@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """CLI script to conditionally query Magic: The Gathering API using the Python SDK for card data."""
+import sys
 import argparse
 from mtgsdk import Card
 import pyfiglet
@@ -9,6 +10,11 @@ from rich.markdown import Markdown
 
 cards = []
 detailed_cards = []
+
+if sys.version_info > (3,9,9):
+    import ssl
+    ssl._create_default_https_context = ssl._create_unverified_context
+
 
 # define and parse args
 parser = argparse.ArgumentParser(
