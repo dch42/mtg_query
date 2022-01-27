@@ -7,10 +7,9 @@ clone the repo and change to directory:
 git clone https://github.com/dch42/mtg_query.git && cd mtg_query
 ~~~
 
-Running `make` will install dependencies and add executable permissions to the script.
-
+Run `setup.sh` to install the script: 
 ~~~
-make
+chmod +x setup.sh && ./setup.sh
 ~~~
 
 ## Usage
