@@ -34,7 +34,7 @@ Query parameters are passed as arguments when invoking the script.
 For example, to search for all ***'black' 'instant'*** cards with a CMC of ***'2'*** which contain the text ***'sacrifice'***:
 
 ~~~
-./mtg_query.py -c black -t instant -cmc 2 -txt sacrifice
+mtgq -c black -t instant -cmc 2 -txt sacrifice
 ~~~
 
 Result:
