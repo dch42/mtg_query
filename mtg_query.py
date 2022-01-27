@@ -11,7 +11,7 @@ from rich.markdown import Markdown
 cards = []
 detailed_cards = []
 
-if sys.version_info > (3,9,9):
+if sys.version_info > (3, 9, 9):
     import ssl
     ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -88,9 +88,12 @@ Flavor Text: *{card.flavor}*\n
     table = Table(title=f"{card.name} Legalities")
     table.add_column("Format", style="cyan")
     table.add_column("Legality", style="magenta")
-    for item in card.legalities:
-        table.add_row(f"{item['format']}", f"{item['legality']}")
-    console.print(table)
+    try:
+        for item in card.legalities:
+            table.add_row(f"{item['format']}", f"{item['legality']}")
+        console.print(table)
+    except Exception as error:
+        print(f"[ERROR] {error}")
 
 
 def print_details(detailed_cards):
