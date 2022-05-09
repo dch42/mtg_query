@@ -1,6 +1,7 @@
 #!/bin/sh
 
 declare script_name="mtgq"
+declare ext="py"
 declare cfg=".bash_profile"
 
 declare grn="\e[0;92m"
@@ -14,19 +15,22 @@ function make_dir {
 
 function add_to_path {
     printf "Adding '$personal_bin' to \$PATH in $cfg...\n" & 
-    echo export PATH="$personal_bin:\$PATH" >> /Users/$USER/$cfg
+    echo export PATH="$personal_bin:\$PATH" >> $home/$cfg
 }
 
 printf "\nAttempting installation of script '$script_name'...\n\n"
 
-echo "Installing requirements..."
+[[ -f './requirements.txt' ]] && 
+echo "Installing requirements..." &&
 eval pip3 install -r requirements.txt
 
 case $OSTYPE in 
-    "darwin"*) declare personal_bin="/Users/$USER/bin" ;;
-    "linux-gnu"*) declare personal_bin="/home/$USER/bin" ;;
-    "linux"*) declare personal_bin="/home/$USER/bin" ;;
+    "darwin"*) declare home="/Users/$USER" ;;
+    "linux"*) declare home="/home/$USER" ;;
 esac
+
+declare personal_bin="$home/bin"
+declare hidden_dir="$home/.$script_name"
 
 [ -n $ZSH_VERSION ] && 
 cfg=".zprofile"
@@ -35,13 +39,13 @@ cfg=".zprofile"
 make_dir ||
 printf "'$personal_bin' exists...\n"
 
-grep -q "$personal_bin" /Users/$USER/$cfg && 
+grep -q "$personal_bin" $home/$cfg && 
 printf "'$personal_bin' already in \$PATH...\n" ||
 add_to_path
 
 printf "\nInstalling $script_name...\n"
-chmod +x ./${script_name}.py &&
-cp ./${script_name}.py $personal_bin/$script_name &&
+chmod +x ./${script_name}.$ext &&
+cp ./${script_name}.$ext $personal_bin/$script_name &&
 printf "${grn}[SUCCESS]${reset} Script $script_name installed at '$personal_bin/$script_name'!\n\n" ||
 printf "${red}[ERROR]${reset} Something went wrong...\n" exit 1
 
