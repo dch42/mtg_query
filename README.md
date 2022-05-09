@@ -12,7 +12,7 @@ Run `setup.sh` to install the script:
 chmod +x setup.sh && ./setup.sh
 ~~~
 
-This will install dependencies and install the script as `mtgq` in /Users/$USER/bin, adding it to bash or zsh PATH. 
+This will install dependencies and make the script available as `mtgq` in' ~/bin', adding it to bash or zsh $PATH. 
 
 ## Usage
 *Note: Parameters are evaluated cumulatively, rather than individually.*
