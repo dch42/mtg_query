@@ -1,7 +1,6 @@
 #!/bin/sh
 
 declare script_name="mtgq"
-declare personal_bin="/Users/$USER/bin"
 declare cfg=".bash_profile"
 
 declare grn="\e[0;92m"
@@ -18,14 +17,16 @@ function add_to_path {
     echo export PATH="$personal_bin:\$PATH" >> /Users/$USER/$cfg
 }
 
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-###############################################################
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
 printf "\nAttempting installation of script '$script_name'...\n\n"
 
 echo "Installing requirements..."
 eval pip3 install -r requirements.txt
+
+case $OSTYPE in 
+    "darwin"*) declare personal_bin="/Users/$USER/bin" ;;
+    "linux-gnu"*) declare personal_bin="/home/$USER/bin" ;;
+    "linux"*) declare personal_bin="/home/$USER/bin" ;;
+esac
 
 [ -n $ZSH_VERSION ] && 
 cfg=".zprofile"
@@ -38,8 +39,10 @@ grep -q "$personal_bin" /Users/$USER/$cfg &&
 printf "'$personal_bin' already in \$PATH...\n" ||
 add_to_path
 
-echo "Installing $script_name..."
+printf "\nInstalling $script_name...\n"
 chmod +x ./${script_name}.py &&
 cp ./${script_name}.py $personal_bin/$script_name &&
-printf "${grn}[SUCCESS]${reset} Script $script_name installed at '$personal_bin/$script'!\n\n" ||
+printf "${grn}[SUCCESS]${reset} Script $script_name installed at '$personal_bin/$script_name'!\n\n" ||
 printf "${red}[ERROR]${reset} Something went wrong...\n" exit 1
+
+exit 0
