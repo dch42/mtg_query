@@ -30,23 +30,22 @@ case $OSTYPE in
 esac
 
 declare personal_bin="$home/bin"
-declare hidden_dir="$home/.$script_name"
 
 [ -n $ZSH_VERSION ] && 
 cfg=".zprofile"
 
 [[ ! -d $personal_bin ]] && 
 make_dir ||
-printf "'$personal_bin' exists...\n"
+printf "\n${grn}[OK]${reset} '$personal_bin' exists...\n"
 
 grep -q "$personal_bin" $home/$cfg && 
-printf "'$personal_bin' already in \$PATH...\n" ||
+printf "${grn}[OK]${reset} '$personal_bin' already in \$PATH...\n" ||
 add_to_path
 
-printf "\nInstalling $script_name...\n"
+printf "\nInstalling '$script_name'...\n"
 chmod +x ./${script_name}.$ext &&
 cp ./${script_name}.$ext $personal_bin/$script_name &&
-printf "${grn}[SUCCESS]${reset} Script $script_name installed at '$personal_bin/$script_name'!\n\n" ||
-printf "${red}[ERROR]${reset} Something went wrong...\n" exit 1
+printf "\n${grn}[SUCCESS]${reset} Script '$script_name' installed at '$personal_bin/$script_name'!\n\n" ||
+printf "\n${red}[ERROR]${reset} Something went wrong...\n" exit 1
 
 exit 0
